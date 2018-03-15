@@ -1,0 +1,13 @@
+*.obj
+x64
+*.opensdf
+*.sdf
+*.lib
+*.suo
+*.pdb
+*.idb
+*.log
+*.tlog
+*.exe
+*.ilk
+*.mtl
