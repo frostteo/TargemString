@@ -1,8 +1,9 @@
-#pragma once
+#ifndef __STRING_
+#define __STRING_
 
 #include "RCObject.h"
 #include "RCPtr.h"
-#include <string>
+#include "PortableCIStrCompare.h"
 #include <iostream>
 
 class String
@@ -30,15 +31,21 @@ public:
  
 public:
   String(const char* value = "");
+  String(const String& rhs) : m_value(rhs.m_value) { } // In this class compiler realization of copy ctor was pleaseable
+
   const CharProxy operator[](int index) const;
   CharProxy operator[](int index);
 
+  const String& operator=(const String& rhs); // // In this class compiler realization opetator was pleaseable
   bool operator==(const String &) const;
   bool operator!=(const String &) const;
   bool operator<(const String &) const;
   bool operator<=(const String &) const;
   bool operator>(const String &) const;
   bool operator>=(const String &) const;
+
+  bool caseInsensitiveLessOrEqual(const String& rhs) const;
+  inline bool caseInsensitiveGreater(const String& rhs) const { return !this->caseInsensitiveLessOrEqual(rhs); }
 
   int size() const;
 private:
@@ -56,3 +63,4 @@ private:
   RCPtr<StringValue> m_value;
 };
 
+#endif // __STRING_

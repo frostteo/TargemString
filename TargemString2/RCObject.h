@@ -1,4 +1,5 @@
-#pragma once
+#ifndef __RC_OBJECT_
+#define __RC_OBJECT_
 
 class RCObject
 {
@@ -18,3 +19,4 @@ private:
   bool m_shareable;
 };
 
+#endif	// __RC_OBJECT_

@@ -13,7 +13,7 @@ void outputString(const String &str)
 
 bool greater(const String &str1, const String &str2)
 {
-  return str1 > str2;
+  return str1.caseInsensitiveGreater(str2);
 }
 
 std::vector<String> descendingStringSort(char * arr[], int arrLength)

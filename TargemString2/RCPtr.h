@@ -1,4 +1,5 @@
-#pragma once
+#ifndef __RC_PTR_
+#define __RC_PTR_
 
 template<class T>
 class RCPtr
@@ -14,6 +15,8 @@ private:
   T* m_pointee;
   void init();
 };
+
+#endif // __RC_PTR_
 
 template<class T>
 void RCPtr<T>::init()

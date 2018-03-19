@@ -149,3 +149,17 @@ bool String::operator!=(const String &right) const
 {
   return strcmp(m_value->m_data, right.m_value->m_data) != 0;
 }
+
+const String& String::operator = (const String& rhs)
+{
+  if (this == &rhs)
+    return *this;
+
+  m_value = rhs.m_value;
+  return *this;
+}
+
+bool String::caseInsensitiveLessOrEqual(const String& rhs) const
+{
+  return strcmpciportable(m_value->m_data, rhs.m_value->m_data) <= 0;
+}
