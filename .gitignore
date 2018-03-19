@@ -8,6 +8,6 @@ x64
 *.idb
 *.log
 *.tlog
-*.exe
 *.ilk
 *.mtl
+ipch
